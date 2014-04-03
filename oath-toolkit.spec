@@ -2,7 +2,7 @@ Summary:	OATH Toolkit - easily build one-time password authentication systems
 Summary(pl.UTF-8):	OATH Toolkit - łatwe tworzenie systemów uwierzytelniania z jednorazowymi hasłami
 Name:		oath-toolkit
 Version:	2.4.1
-Release:	1
+Release:	2
 License:	LGPL v2.1+ (libraries), GPL v3+ (utilities and PAM module)
 Group:		Libraries
 Source0:	http://download.savannah.gnu.org/releases/oath-toolkit/%{name}-%{version}.tar.gz
@@ -32,8 +32,8 @@ działające z linii poleceń oraz moduł PAM. Obsługiwane techniki
 obejmują oparty na zdarzeniach algorytm HOTP (RFC 4226) oraz oparty na
 czasie algorytm TOTP (RFC 6238). OATH to skrót od Open AuTHentication
 - nazwy organizacji opisującej algorytmy. W celu zarządzania kluczami
-obsługiwany jest format PSKC (Portable Symmetric Key Container),
-opisany w RFC 6030.
+  obsługiwany jest format PSKC (Portable Symmetric Key Container),
+  opisany w RFC 6030.
 
 %package devel
 Summary:	Header files for OATH libraries
@@ -65,6 +65,9 @@ Statyczne biblioteki OATH.
 Summary:	OATH API documentation
 Summary(pl.UTF-8):	Dokumentacja API bibliotek OATH
 Group:		Documentation
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 API documentation for OATH libraries.
@@ -84,7 +87,6 @@ Dokumentacja API bibliotek OATH.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
