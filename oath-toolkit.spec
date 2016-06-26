@@ -1,12 +1,12 @@
 Summary:	OATH Toolkit - easily build one-time password authentication systems
 Summary(pl.UTF-8):	OATH Toolkit - łatwe tworzenie systemów uwierzytelniania z jednorazowymi hasłami
 Name:		oath-toolkit
-Version:	2.6.0
+Version:	2.6.1
 Release:	1
 License:	LGPL v2.1+ (libraries), GPL v3+ (utilities and PAM module)
 Group:		Libraries
 Source0:	http://download.savannah.gnu.org/releases/oath-toolkit/%{name}-%{version}.tar.gz
-# Source0-md5:	f19f1c47eb7d1c609b3e244876b9ce63
+# Source0-md5:	19ee7ed7c2b40c1dc92887f893ed2726
 URL:		http://www.nongnu.org/oath-toolkit/
 BuildRequires:	gtk-doc >= 1.1
 BuildRequires:	help2man
