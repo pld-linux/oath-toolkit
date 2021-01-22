@@ -12,6 +12,7 @@ BuildRequires:	gtk-doc >= 1.1
 BuildRequires:	help2man
 BuildRequires:	libxml2-devel >= 2
 BuildRequires:	pam-devel
+BuildRequires:	rpmbuild(macros) >= 1.752
 BuildRequires:	xmlsec1-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -65,9 +66,7 @@ Statyczne biblioteki OATH.
 Summary:	OATH API documentation
 Summary(pl.UTF-8):	Dokumentacja API bibliotek OATH
 Group:		Documentation
-%if "%{_rpmversion}" >= "5"
-BuildArch:	noarch
-%endif
+%{?noarchpackage}
 
 %description apidocs
 API documentation for OATH libraries.
