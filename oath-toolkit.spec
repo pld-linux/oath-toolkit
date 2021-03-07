@@ -66,7 +66,7 @@ Statyczne biblioteki OATH.
 Summary:	OATH API documentation
 Summary(pl.UTF-8):	Dokumentacja API bibliotek OATH
 Group:		Documentation
-%{?noarchpackage}
+BuildArch:	noarch
 
 %description apidocs
 API documentation for OATH libraries.
