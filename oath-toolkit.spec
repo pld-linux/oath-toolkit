@@ -1,3 +1,4 @@
+%bcond_without	doc	# do not build documentation
 Summary:	OATH Toolkit - easily build one-time password authentication systems
 Summary(pl.UTF-8):	OATH Toolkit - łatwe tworzenie systemów uwierzytelniania z jednorazowymi hasłami
 Name:		oath-toolkit
@@ -8,7 +9,7 @@ Group:		Libraries
 Source0:	https://download.savannah.gnu.org/releases/oath-toolkit/%{name}-%{version}.tar.gz
 # Source0-md5:	0a3c0d9e1f8095c88657bfea8ad5d59f
 URL:		http://www.nongnu.org/oath-toolkit/
-BuildRequires:	gtk-doc >= 1.1
+%{?with_doc:BuildRequires:	gtk-doc >= 1.1}
 BuildRequires:	help2man
 BuildRequires:	libxml2-devel >= 2
 BuildRequires:	pam-devel
@@ -80,6 +81,7 @@ Dokumentacja API bibliotek OATH.
 
 %build
 %configure \
+	%{!?with_doc:--disable-gtk-doc} \
 	--disable-silent-rules \
 	--with-html-dir=%{_gtkdocdir} \
 	--with-pam-dir=/%{_lib}/security
