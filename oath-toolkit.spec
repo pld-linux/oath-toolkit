@@ -14,6 +14,7 @@ BuildRequires:	help2man
 BuildRequires:	libxml2-devel >= 2
 BuildRequires:	pam-devel
 BuildRequires:	pkgconfig
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 1.752
 BuildRequires:	xmlsec1-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
