@@ -16,6 +16,7 @@ URL:		http://www.nongnu.org/oath-toolkit/
 %{?with_doc:BuildRequires:	gtk-doc >= 1.1}
 BuildRequires:	help2man
 BuildRequires:	libxml2-devel >= 2
+BuildRequires:	libxml2-progs >= 2
 BuildRequires:	pam-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-build >= 4.6
