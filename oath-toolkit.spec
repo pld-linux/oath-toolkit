@@ -1,6 +1,5 @@
 #
 # Conditional build
-%bcond_without	doc		# do not build documentation
 %bcond_without	static_libs	# static libraries
 
 Summary:	OATH Toolkit - easily build one-time password authentication systems
@@ -13,7 +12,6 @@ Group:		Libraries
 Source0:	https://download.savannah.gnu.org/releases/oath-toolkit/%{name}-%{version}.tar.gz
 # Source0-md5:	3a408c07032be46f656ff74b46b6ef61
 URL:		http://www.nongnu.org/oath-toolkit/
-%{?with_doc:BuildRequires:	gtk-doc >= 1.1}
 BuildRequires:	help2man
 BuildRequires:	libxml2-devel >= 2
 BuildRequires:	libxml2-progs >= 2
@@ -87,7 +85,6 @@ Dokumentacja API bibliotek OATH.
 
 %build
 %configure \
-	%{!?with_doc:--disable-gtk-doc} \
 	--disable-silent-rules \
 	%{!?with_static_libs:--disable-static} \
 	--with-html-dir=%{_gtkdocdir} \
