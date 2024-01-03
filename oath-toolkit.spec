@@ -1,4 +1,8 @@
-%bcond_without	doc	# do not build documentation
+#
+# Conditional build
+%bcond_without	doc		# do not build documentation
+%bcond_without	static_libs	# static libraries
+
 Summary:	OATH Toolkit - easily build one-time password authentication systems
 Summary(pl.UTF-8):	OATH Toolkit - łatwe tworzenie systemów uwierzytelniania z jednorazowymi hasłami
 Name:		oath-toolkit
@@ -84,6 +88,7 @@ Dokumentacja API bibliotek OATH.
 %configure \
 	%{!?with_doc:--disable-gtk-doc} \
 	--disable-silent-rules \
+	%{!?with_static_libs:--disable-static} \
 	--with-html-dir=%{_gtkdocdir} \
 	--with-pam-dir=/%{_lib}/security
 %{__make}
@@ -131,10 +136,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/oath_*.3*
 %{_mandir}/man3/pskc_*.3*
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/liboath.a
 %{_libdir}/libpskc.a
+%endif
 
 %files apidocs
 %defattr(644,root,root,755)
